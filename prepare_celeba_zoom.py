@@ -9,9 +9,9 @@ parser = argparse.ArgumentParser(formatter_class=argparse.ArgumentDefaultsHelpFo
 parser.add_argument("--source-dir", type=str,
                     default='/local-scratch/rshu15/celeba/img_align_celeba/',
                     help="Source directory for celeba")
-parser.add_argument("--dest-dir",   type=str,
+parser.add_argument("--dest-file",   type=str,
                     default='/local-scratch/rshu15/celeba/celeba_64_zoom.mat',
-                    help="Destination directory for celeba")
+                    help="Destination file for 64 x 64 celeba .mat file")
 args = parser.parse_args()
 
 files = np.sort(glob(os.path.join(args.source_dir, '*')))
@@ -23,4 +23,4 @@ for i, f in enumerate(files):
     img_buf[i] = np.array(img)
     print '{:d}/{:d}'.format(i + 1, len(files))
 
-savemat(args.dest_dir, {'images': img_buf})
+savemat(args.dest_file, {'images': img_buf})

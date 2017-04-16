@@ -52,7 +52,7 @@ sess = tf.Session()
 load_model(sess)
 f_gen = tb.function(sess, [z], x_fake)
 f_rec = tb.function(sess, [x_real], d_real)
-celeba = CelebA(args.data_dir)
+celeba = CelebA(args.data)
 
 # Alternatively try grouping d_train/g_train together
 all_tensors = [d_train, g_train, d_real_loss, d_fake_loss]

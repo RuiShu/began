@@ -15,7 +15,7 @@ parser.add_argument("--lr-step",   type=int,   default=100000, help="Decay learn
 parser.add_argument("--log-step",  type=int,   default=100,    help="Log after # steps.")
 parser.add_argument("--plot-step", type=int,   default=2000,   help="Plot after # steps.")
 parser.add_argument("--save-step", type=int,   default=5000,   help="Plot after # steps.")
-parser.add_argument("--data-dir",  type=str,   default='/local-scratch/rshu15/celeba/celeba_64_zoom.mat', help="Data directory.")
+parser.add_argument("--data",      type=str,   default='/local-scratch/rshu15/celeba/celeba_64_zoom.mat', help="Data location.")
 args = parser.parse_args()
 print args
 

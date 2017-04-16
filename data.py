@@ -3,12 +3,12 @@ import numpy as np
 from scipy.io import loadmat
 
 class CelebA(object):
-    def __init__(self, data_dir):
-        self._load(data_dir)
+    def __init__(self, data_file):
+        self._load(data_file)
 
-    def _load(self, data_dir):
+    def _load(self, data_file):
         print 'Preparing file'
-        x = loadmat(data_dir)['images']
+        x = loadmat(data_file)['images']
         x = x.astype('float32')
         x /= 255.
         x -= 0.5
